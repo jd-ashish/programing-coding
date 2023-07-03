@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main
+{
+  static int[] rotate(int n, int[] a){
+    for(int j=1; j<=n; j++){
+      int x = a[a.length-j] , i;
+      for(i=a.length-1; i>0; i--){
+        a[i] = a[i-1];
+      }
+      a[j-1] = x;
+    }
+    return a;
+    
+  }
+	public static void main(String[] args) {
+		// Initializing the first array
+		int a[] = { 3,4,5,1,2 };
+      	
+      	System.out.println("Array is : "+ Arrays.toString(a));
+      	
+      System.out.println("<br> Array rotate 1 : "+ Arrays.toString(rotate(1,a)));
+      
+      System.out.println("<br> Array rotate is : "+ Arrays.toString(rotate(1,rotate(1,a))));
+      	
+		
+	}
+}
